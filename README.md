@@ -39,7 +39,7 @@ It uses **Oracle Linux 23 AI Free** and **Oracle SQL Developer** for all example
 ---
 
 ## 🗂️ Project Structure
-
+```
 oracle-sql-portfolio/
 ├── queries/
 │   └── real_world/
@@ -51,7 +51,7 @@ oracle-sql-portfolio/
 │   └── sales_data.sql                # NEW: Sales department data
 ├── README.md                         # You're here!
 └── LICENSE
-
+```
 ---
 
 ## 📚 Learning Modules
@@ -150,10 +150,14 @@ Open issues with questions or feedback
 
 ---
 
-📜 License
+## 📜 License
+
 This project is licensed under the MIT License.
 
+---
+
 ## 🙋‍♂️ About
+
 Maintained by Crispus Omollo
 Proudly built with real SQL and even realer scenarios.
 
