@@ -9,30 +9,48 @@
 
 ---
 
+---
+
+## 📑 Table of Contents
+
+- [Overview](#-overview)
+- [Project Structure](#-project-structure)
+- [Learning Modules](#-learning-modules)
+- [Business Scenarios Highlights](#-business-scenarios-highlights)
+  - [HR + Finance + IT](#-hr--finance--it)
+  - [Sales Department (NEW)](#-sales-department-new)
+- [Getting Started](#-getting-started)
+- [Example Output](#-example-output)
+- [Future Enhancements](#-future-enhancements)
+- [Contributions](#-contributions)
+- [License](#-license)
+- [About](#-about)
+
+---
+
 ## 🚀 Overview
 
 This project is a **hands-on Oracle SQL learning portfolio**, progressing from fundamentals to professional-level reporting using real-world business scenarios.
 
 It uses **Oracle Linux 23 AI Free** and **Oracle SQL Developer** for all examples, with dummy data across departments like **HR, Finance, IT**, and now **Sales**.
 
-> ✅ This repo is designed to showcase your **query-building**, **reporting**, and **business analysis** skills using SQL.
+> ✅ This repo is designed to showcase my **query-building**, **reporting**, and **business analysis** skills using SQL.
 
 ---
 
 ## 🗂️ Project Structure
 
-oracle-sql-learning/
+oracle-sql-portfolio/
 ├── queries/
-│ └── real_world/
-│ └── business_scenarios.sql # Main SQL scenario bundle
+│   └── real_world/
+│       └── business_scenarios.sql    # Main SQL scenario bundle
 ├── docs/
-│ └── business_scenarios_summary.md # Detailed learning notes and explanations
+│   └── business_scenarios_summary.md # Detailed learning notes and explanations
 ├── dummy_data/
-│ ├── hr_finance_it_data.sql # Core departments
-│ └── sales_data.sql # NEW: Sales department data
-├── README.md # You're here!
+│   ├── hr_finance_it_data.sql        # Core departments
+│   └── sales_data.sql                # NEW: Sales department data
+├── README.md                         # You're here!
 └── LICENSE
-
 
 ---
 
@@ -80,31 +98,31 @@ Explore realistic use cases powered by SQL:
 
 ## 🧪 Getting Started
 
-1. **Clone the Repo**  
+### 1. **Clone the Repo**  
    ```bash
-   git clone https://github.com/yourusername/oracle-sql-learning.git
-   cd oracle-sql-learning
+   git clone https://github.com/crispusomollo/oracle-sql-portfolio.git
+   cd oracle-sql-portfolio
 ```
 
-2. Set up your Oracle DB Environment
+### 2. Set up your Oracle DB Environment
 
-3. Use Oracle Linux 23 AI Free
+Use Oracle Linux 23 AI Free
 
-4. Install Oracle SQL Developer
+Install Oracle SQL Developer
 
-5. Create a user/schema for your learning environment
+Create a user/schema for your learning environment
 
-6. Load Dummy Data
-
+### 3. Load Dummy Data
+```sql
 -- Load core data
 @dummy_data/hr_finance_it_data.sql
 
 -- Load sales data (NEW)
 @dummy_data/sales_data.sql
+```
 
-7. Start Exploring Queries
+### 4. Start Exploring Queries
 Open queries/real_world/business_scenarios.sql in SQL Developer and start executing!
-
 
 ---
 
@@ -112,11 +130,11 @@ Open queries/real_world/business_scenarios.sql in SQL Developer and start execut
 
 Add KPI dashboard queries (Module 08)
 
- Generate ER diagram and include in docs
+Generate ER diagram and include in docs
 
- Create demo GIF/video
+Create demo GIF/video
 
- Integrate SQL linting and formatting
+Integrate SQL linting and formatting
 
 ---
 
