@@ -38,6 +38,22 @@ INSERT INTO employees VALUES (110, 'James', 'Otieno', DATE '1996-10-05', 'Male',
 INSERT INTO employees VALUES (111, 'Karen', 'Maina', DATE '1983-02-16', 'Female', 'karen.maina@example.com', '0711122233', DATE '2014-09-01', 4, 90000, 'Admin Officer');
 INSERT INTO employees VALUES (112, 'Leon', 'Kibet', DATE '1994-12-28', 'Male', 'leon.kibet@example.com', '0722233344', DATE '2019-12-12', 5, 95000, 'Operations Analyst');
 
+-- Insert training logs
+INSERT INTO training_logs (training_id, employee_id, training_title, trainer, start_date, end_date, location, conducted_by)
+VALUES (201, 104, 'Workplace Ethics', 'Henry Kariuki', DATE '2023-01-10', DATE '2023-01-12', 'Boardroom A', 108);
+
+INSERT INTO training_logs (training_id, employee_id, training_title, trainer, start_date, end_date, location, conducted_by)
+VALUES (202, 105, 'Onboarding and Orientation', 'Irene Mburu', DATE '2023-02-15', DATE '2023-02-16', 'HR Room', 109);
+
+INSERT INTO training_logs (training_id, employee_id, training_title, trainer, start_date, end_date, location, conducted_by)
+VALUES (203, 106, 'Finance Systems Security', 'James Otieno', DATE '2023-03-05', DATE '2023-03-06', 'IT Lab', 110);
+
+INSERT INTO training_logs (training_id, employee_id, training_title, trainer, start_date, end_date, location, conducted_by)
+VALUES (204, 107, 'Payroll Compliance', 'Brian Odhiambo', DATE '2023-04-01', DATE '2023-04-02', 'Finance Hall', 106);
+
+INSERT INTO training_logs (training_id, employee_id, training_title, trainer, start_date, end_date, location, conducted_by)
+VALUES (205, 108, 'Advanced Networking', 'Cynthia Kimani', DATE '2023-05-10', DATE '2023-05-12', 'Data Center', 103);
+
 
 -- Update department managers
 UPDATE departments SET manager_id = 101 WHERE department_id = 1; -- HR
