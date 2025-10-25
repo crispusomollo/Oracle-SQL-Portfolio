@@ -106,11 +106,11 @@ Explore realistic use cases powered by SQL:
 
 ### 2. Set up your Oracle DB Environment
 
-Use Oracle Linux 23 AI Free
+- Use Oracle Linux 23 AI Free
 
-Install Oracle SQL Developer
+- Install Oracle SQL Developer
 
-Create a user/schema for your learning environment
+- Create a user/schema for your learning environment
 
 ### 3. Load Dummy Data
 ```sql
@@ -128,13 +128,13 @@ Open queries/real_world/business_scenarios.sql in SQL Developer and start execut
 
 ## 📌 Future Enhancements
 
-Add KPI dashboard queries (Module 08)
+- Add KPI dashboard queries (Module 08)
 
-Generate ER diagram and include in docs
+- Generate ER diagram and include in docs
 
-Create demo GIF/video
+- Create demo GIF/video
 
-Integrate SQL linting and formatting
+- Integrate SQL linting and formatting
 
 ---
 
@@ -142,11 +142,11 @@ Integrate SQL linting and formatting
 
 Contributions are welcome! Feel free to:
 
-Fork this repo and customize for your own learning
+- Fork this repo and customize for your own learning
 
-Submit PRs for additional use cases
+- Submit PRs for additional use cases
 
-Open issues with questions or feedback
+- Open issues with questions or feedback
 
 ---
 
