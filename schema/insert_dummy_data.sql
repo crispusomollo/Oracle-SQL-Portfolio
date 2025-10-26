@@ -61,3 +61,85 @@ UPDATE departments SET manager_id = 102 WHERE department_id = 2; -- Finance
 UPDATE departments SET manager_id = 103 WHERE department_id = 3; -- IT
 UPDATE departments SET manager_id = 111 WHERE department_id = 4; -- Admin
 UPDATE departments SET manager_id = 112 WHERE department_id = 5; -- Ops
+
+
+-- 💰 Payroll Data Inserts
+-- Insert payroll records
+INSERT INTO payroll (payroll_id, employee_id, salary, pay_period, payment_date)
+VALUES (301, 101, 120000, '2025-09', DATE '2025-09-30');
+
+INSERT INTO payroll (payroll_id, employee_id, salary, pay_period, payment_date)
+VALUES (302, 102, 110000, '2025-09', DATE '2025-09-30');
+
+INSERT INTO payroll (payroll_id, employee_id, salary, pay_period, payment_date)
+VALUES (303, 103, 130000, '2025-09', DATE '2025-09-30');
+
+INSERT INTO payroll (payroll_id, employee_id, salary, pay_period, payment_date)
+VALUES (304, 104, 75000, '2025-09', DATE '2025-09-30');
+
+INSERT INTO payroll (payroll_id, employee_id, salary, pay_period, payment_date)
+VALUES (305, 105, 72000, '2025-09', DATE '2025-09-30');
+
+INSERT INTO payroll (payroll_id, employee_id, salary, pay_period, payment_date)
+VALUES (306, 106, 95000, '2025-09', DATE '2025-09-30');
+
+INSERT INTO payroll (payroll_id, employee_id, salary, pay_period, payment_date)
+VALUES (307, 107, 98000, '2025-09', DATE '2025-09-30');
+
+INSERT INTO payroll (payroll_id, employee_id, salary, pay_period, payment_date)
+VALUES (308, 108, 100000, '2025-09', DATE '2025-09-30');
+
+INSERT INTO payroll (payroll_id, employee_id, salary, pay_period, payment_date)
+VALUES (309, 109, 105000, '2025-09', DATE '2025-09-30');
+
+INSERT INTO payroll (payroll_id, employee_id, salary, pay_period, payment_date)
+VALUES (310, 110, 85000, '2025-09', DATE '2025-09-30');
+
+INSERT INTO payroll (payroll_id, employee_id, salary, pay_period, payment_date)
+VALUES (311, 111, 90000, '2025-09', DATE '2025-09-30');
+
+INSERT INTO payroll (payroll_id, employee_id, salary, pay_period, payment_date)
+VALUES (312, 112, 95000, '2025-09', DATE '2025-09-30');
+
+-- 📊 Budget Data Inserts
+-- Insert department budgets
+INSERT INTO budget (budget_id, department_id, fiscal_year, amount_allocated)
+VALUES (401, 1, 2025, 1500000);
+
+INSERT INTO budget (budget_id, department_id, fiscal_year, amount_allocated)
+VALUES (402, 2, 2025, 2000000);
+
+INSERT INTO budget (budget_id, department_id, fiscal_year, amount_allocated)
+VALUES (403, 3, 2025, 2500000);
+
+INSERT INTO budget (budget_id, department_id, fiscal_year, amount_allocated)
+VALUES (404, 4, 2025, 1000000);
+
+INSERT INTO budget (budget_id, department_id, fiscal_year, amount_allocated)
+VALUES (405, 5, 2025, 1050000);
+
+-- 💸 Expense Data Inserts
+-- Insert expenses linked to departments and budgets
+INSERT INTO expenses (expense_id, department_id, expense_date, amount, description)
+VALUES (501, 1, DATE '2025-01-15', 250000, 'Recruitment drives');
+
+INSERT INTO expenses (expense_id, department_id, expense_date, amount, description)
+VALUES (502, 1, DATE '2025-05-10', 100000, 'Employee welfare');
+
+INSERT INTO expenses (expense_id, department_id, expense_date, amount, description)
+VALUES (503, 2, DATE '2025-02-20', 300000, 'Audit services');
+
+INSERT INTO expenses (expense_id, department_id, expense_date, amount, description)
+VALUES (504, 2, DATE '2025-08-01', 150000, 'Payroll processing');
+
+INSERT INTO expenses (expense_id, department_id, expense_date, amount, description)
+VALUES (505, 3, DATE '2025-03-15', 400000, 'IT equipment');
+
+INSERT INTO expenses (expense_id, department_id, expense_date, amount, description)
+VALUES (506, 3, DATE '2025-07-22', 100000, 'Software licenses');
+
+INSERT INTO expenses (expense_id, department_id, expense_date, amount, description)
+VALUES (507, 4, DATE '2025-04-30', 80000, 'Office supplies');
+
+INSERT INTO expenses (expense_id, department_id, expense_date, amount, description)
+VALUES (508, 5, DATE '2025-06-18', 120000, 'Logistics and transport');
