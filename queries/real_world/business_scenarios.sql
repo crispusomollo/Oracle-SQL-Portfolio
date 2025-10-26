@@ -35,3 +35,30 @@ ORDER BY variance;
 -- Aggregate functions and GROUP BY are critical for financial summaries.
 -- Use CASE to avoid divide-by-zero errors in percentage calculations.
 
+
+-- Scenario 2: Inventory Cost Allocation
+-- Calculates total inventory costs allocated to IT and Finance departments, tracking cost trends
+-- -------------------------------------------------------------------
+
+SELECT
+    d.department_name,
+    i.item_category,
+    SUM(i.unit_cost * i.quantity) AS total_inventory_cost
+FROM inventory i
+JOIN departments d ON i.department_id = d.department_id
+WHERE d.department_name IN ('IT', 'Finance')
+GROUP BY d.department_name, i.item_category
+ORDER BY d.department_name, total_inventory_cost DESC;
+
+-- Explanation:
+-- Summarizes inventory costs by category for IT and Finance.
+-- Useful for budgeting and expense tracking related to inventory holdings.
+
+-- Learning Notes:
+-- Multiplying unit cost by quantity calculates total cost per item.
+-- Filtering with WHERE limits to relevant departments.
+-- Aggregating by department and category provides granular insight.
+-- Sorting helps identify costly inventory categories quickly.
+
+
+
