@@ -194,3 +194,44 @@ ORDER BY p.pay_period;
 -- Conditional logic flags periods with possible impact.
 -- Useful pattern for correlating events across departments.
 
+
+
+
+Scenario 6: Training Completion Rates by Department
+-- =============================================
+-- Scenario 6: Training Completion Rates by Department
+-- Tracks % of employees trained per department and identifies lagging departments
+-- ------------------------------------------------
+
+WITH total_employees AS (
+    SELECT department_id, COUNT(employee_id) AS total_emp
+    FROM employees
+    GROUP BY department_id
+),
+trained_employees AS (
+    SELECT e.department_id, COUNT(DISTINCT t.employee_id) AS trained_emp
+    FROM employees e
+    JOIN training_logs t ON e.employee_id = t.employee_id
+    GROUP BY e.department_id
+)
+
+SELECT
+    d.department_name,
+    te.total_emp,
+    NVL(tr.trained_emp, 0) AS trained_emp,
+    ROUND(NVL(tr.trained_emp, 0) / te.total_emp * 100, 2) AS training_completion_pct
+FROM total_employees te
+LEFT JOIN trained_employees tr ON te.department_id = tr.department_id
+JOIN departments d ON te.department_id = d.department_id
+ORDER BY training_completion_pct;
+
+-- Explanation:
+-- Calculates training completion percentage per department.
+-- Identifies departments lagging behind in employee training.
+-- Valuable for HR and IT in planning targeted training efforts.
+
+-- Learning Notes:
+-- CTEs separate total and trained counts cleanly.
+-- Aggregates and calculates percentages for progress tracking.
+-- NVL used for departments with zero trained employees.
+
