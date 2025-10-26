@@ -163,3 +163,34 @@ ORDER BY forecasted_variance;
 -- Basic forecasting via trend extrapolation.
 
 
+
+
+Scenario 5: System Downtime Impact on Payroll Processing
+-- =============================================
+-- Scenario 5: System Downtime Impact on Payroll Processing
+-- Identifies payroll delays correlated with IT system downtime
+-- ------------------------------------------------
+
+SELECT
+    p.pay_period,
+    COUNT(p.employee_id) AS payroll_processed,
+    COUNT(d.downtime_id) AS downtime_events,
+    CASE
+        WHEN COUNT(d.downtime_id) > 0 THEN 'Potential Impact'
+        ELSE 'No Impact'
+    END AS impact_status
+FROM payroll p
+LEFT JOIN downtime_logs d ON p.pay_period = d.affected_period
+GROUP BY p.pay_period
+ORDER BY p.pay_period;
+
+-- Explanation:
+-- Counts payroll processed vs. IT downtime events per pay period.
+-- Highlights periods where downtime may have affected payroll processing.
+-- Useful for IT and HR collaboration on system reliability.
+
+-- Learning Notes:
+-- LEFT JOIN captures pay periods even without downtime.
+-- Conditional logic flags periods with possible impact.
+-- Useful pattern for correlating events across departments.
+
