@@ -9,8 +9,6 @@
 
 ---
 
----
-
 ## 📑 Table of Contents
 
 - [Overview](#-overview)
@@ -73,7 +71,7 @@ oracle-sql-portfolio/
 
 Explore realistic use cases powered by SQL:
 
-### 🔹 HR + Finance + IT
+### HR + Finance + IT
 
 - Payroll vs Budget Variance  
 - Inventory Cost Allocation  
@@ -82,7 +80,7 @@ Explore realistic use cases powered by SQL:
 - System Downtime Impact on Payroll  
 - Training ROI on Compensation
 
-### 🔸 Sales Department (NEW)
+### Sales Department (NEW)
 
 - 💰 **Sales Revenue vs Budget Performance**  
 - 💼 **Commission Impact on Payroll**  
