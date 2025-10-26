@@ -112,3 +112,54 @@ ORDER BY salary_change DESC;
 
 
 
+
+Scenario 4: Budget Utilization Forecast
+-- =============================================
+-- Scenario 4: Budget Utilization Forecast
+-- Forecast next quarter budget utilization based on current expense trends
+-- ------------------------------------------------
+
+WITH monthly_expenses AS (
+    SELECT
+        department_id,
+        TO_CHAR(TO_DATE(pay_period, 'YYYY-MM'), 'YYYY-MM') AS month,
+        SUM(salary) AS total_payroll_expense
+    FROM payroll
+    WHERE pay_period BETWEEN '2025-01' AND '2025-09'
+    GROUP BY department_id, TO_CHAR(TO_DATE(pay_period, 'YYYY-MM'), 'YYYY-MM')
+),
+avg_monthly_expense AS (
+    SELECT
+        department_id,
+        AVG(total_payroll_expense) AS avg_monthly_expense
+    FROM monthly_expenses
+    GROUP BY department_id
+),
+budget_alloc AS (
+    SELECT department_id, amount_allocated AS quarterly_budget
+    FROM budget
+    WHERE fiscal_year = 2025
+)
+
+SELECT
+    d.department_name,
+    b.quarterly_budget,
+    a.avg_monthly_expense,
+    a.avg_monthly_expense * 3 AS forecasted_quarterly_expense,
+    b.quarterly_budget - (a.avg_monthly_expense * 3) AS forecasted_variance
+FROM avg_monthly_expense a
+JOIN budget_alloc b ON a.department_id = b.department_id
+JOIN departments d ON a.department_id = d.department_id
+ORDER BY forecasted_variance;
+
+-- Explanation:
+-- Forecasts next quarter payroll spending by averaging past monthly expenses and multiplying by 3.
+-- Compares forecasted spending to budget allocations for variance insights.
+-- Helps finance anticipate budget overruns or savings.
+
+-- Learning Notes:
+-- Uses multiple CTEs for logical breakdown.
+-- Aggregates monthly expenses and averages them.
+-- Basic forecasting via trend extrapolation.
+
+
