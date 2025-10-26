@@ -62,3 +62,53 @@ ORDER BY d.department_name, total_inventory_cost DESC;
 
 
 
+
+Scenario 3: Employee Training Impact on Payroll
+-- =============================================
+-- Scenario 3: Employee Training Impact on Payroll
+-- Analyze if employees who attended training received salary increments or bonuses
+-- ------------------------------------------------
+
+WITH training_employees AS (
+    SELECT DISTINCT employee_id
+    FROM training_logs
+),
+salary_before_training AS (
+    SELECT e.employee_id, p.salary AS salary_before
+    FROM employees e
+    JOIN payroll p ON e.employee_id = p.employee_id
+    WHERE p.pay_period = '2025-06' -- before training period
+),
+salary_after_training AS (
+    SELECT e.employee_id, p.salary AS salary_after
+    FROM employees e
+    JOIN payroll p ON e.employee_id = p.employee_id
+    WHERE p.pay_period = '2025-09' -- after training period
+)
+
+SELECT
+    e.employee_id,
+    e.first_name || ' ' || e.last_name AS employee_name,
+    COALESCE(sbt.salary_before, 0) AS salary_before_training,
+    COALESCE(sat.salary_after, 0) AS salary_after_training,
+    COALESCE(sat.salary_after, 0) - COALESCE(sbt.salary_before, 0) AS salary_change,
+    CASE WHEN t.employee_id IS NOT NULL THEN 'Trained' ELSE 'Not Trained' END AS training_status
+FROM employees e
+LEFT JOIN training_employees t ON e.employee_id = t.employee_id
+LEFT JOIN salary_before_training sbt ON e.employee_id = sbt.employee_id
+LEFT JOIN salary_after_training sat ON e.employee_id = sat.employee_id
+ORDER BY salary_change DESC;
+
+-- Explanation:
+-- This query compares employees' salaries before and after a training period.
+-- It highlights salary increments and correlates them with training attendance.
+-- Useful for HR and Finance to assess training ROI.
+
+-- Learning Notes:
+-- Uses CTEs (WITH clause) for modular, readable query parts.
+-- DISTINCT filters unique trained employees.
+-- COALESCE handles missing salary data.
+-- LEFT JOIN preserves all employees for comprehensive analysis.
+
+
+
