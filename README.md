@@ -126,8 +126,6 @@ Open queries/real_world/business_scenarios.sql in SQL Developer and start execut
 
 ## 📌 Future Enhancements
 
-- Add KPI dashboard queries (Module 08)
-
 - Generate ER diagram and include in docs
 
 - Create demo GIF/video
@@ -157,5 +155,6 @@ This project is licensed under the MIT License.
 ## 🙋‍♂️ About
 
 Maintained by Crispus Omollo
-Proudly built with real SQL and even realer scenarios.
+
+> Proudly built with real SQL and even realer scenarios.
 
